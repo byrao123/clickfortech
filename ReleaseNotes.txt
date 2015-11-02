@@ -1,0 +1,33 @@
+
+Version 2.5.1 [2013/08/06]
+- NEW: Added additional status codes.
+- NEW: CheckInstall] Group displayed reports by type.
+- NEW: Added Account "allowNotify" field.
+- NEW: Added Account command-line parameter "-setPassword".
+- NEW: Added Device "lastEngineOnTime"/"lastEngineOffTime" fields.
+- NEW: Added Device engine-hour accumulation based on Engine On/Off events.
+- NEW: Added Device-based work-hour reporting to Motion Report.
+- NEW: Added unique SIM-phone-number support to Device/Vehicle Admin.
+- FIX: Fixed Motion Report idle time stop calculation.
+- NEW: Added additional report column support to "FieldLayout.java"
+- FIX: Fix NPE in "DateTime.parseDateTime", which could occur under some conditions.
+- FIX: Fixe "Payload.readLongBCD" to support reading Little-Endian values.
+- UPD: Added ACL support for Read/View to "System Accounts".
+- DCS: gprmc] Added battery-level/volts, #satellites (thanks to STefan Mayer)
+
+-----------------------------------------------------------------------------------
+
+Project Home Page:
+    http://www.opengts.org
+
+Download Latest Version from SourceForge:
+    https://sourceforge.net/projects/opengts/
+
+Documentation (installation/configuration, tutorials, FAQ):
+    http://www.opengts.org/FAQ.html
+    http://www.opengts.org/documentation.html
+
+GTS Enterprise:
+    http://www.geotelematic.com/gts.html
+    http://www.geotelematic.com/documentation.html
+
