@@ -1,5 +1,6 @@
-language: java 
+sudo 
+language: java
+ant test 
 
-ant test
 
 
