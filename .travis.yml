@@ -1,3 +1,4 @@
+language: java 
 
-language: java
-ant build
+ant test 
+
