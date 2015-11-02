@@ -1,5 +1,5 @@
 sudo 
-language: java
+language java
 ant test 
 
 
