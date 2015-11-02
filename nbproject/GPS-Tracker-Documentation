@@ -1,0 +1,447 @@
+8) Installing/Starting the OpenDMTP, TK10x, and Aspicore DCS Modules
+This section describes how to start and stop the "gtsdmtp", "tk10x", and "aspicore" device communication server
+(DCS) modules, however these instructions are also applicable to other device communication servers which may also
+be installed or implemented.
+More information on the OpenDMTP project may be found at the link "http://www.opendmtp.org". Support for
+OpenDMTP compliant devices is included in OpenGTS with the "gtsdmtp" device communication server (DCS).
+The "tk10x" DCS module supports most common TK102/TK103 protocol compliant devices (Note: some manufacturers
+producing a TK102/TK103 device may be using their own custom protocol variant that is not compatible with the
+common TK102/TK103 protocol).
+Aspicore provides client phone software for tracking various Nokia, Samsung, and Sony Ericsson phones. The
+Aspicore DCS within the OpenGTS package is designed to work with the TCP or UDP data transport method which can
+be configured within the Aspicore client phone application. For more information on their supported phones, and to
+obtain their client software, vistit their website at "http://www.aspicore.com/en/tuotteet_tracker.asp?tab=2&sub=1".
+8.1) Configuring the "dcservers.xml" File
+The file "dcservers.xml" contains a few configurable properties that effect the execution of the OpenDMTP
+("gtsdmtp") and Aspicore ("aspicore") servers. Most of the properties values should be left as their default value,
+but the following properties values can be set to those appropriate to your operating environment:
+OpenDMTP:
+• tcpPort="31000"
+• udpPort="31000"
+TK10X:
+• tcpPort="31272"
+• udpPort="31272"
+Aspicore:
+• tcpPort="31265"
+• udpPort="31265"
+These ports are specified on the "ListenPorts" tag for their respective "DCServer", and are the default ports on
+which these servers listen for incoming connections from the remote devices. You can change this port by changing the
+value on this tag attribute. You can also indicate multiple ports by specifying them with comma separators. (ie.
+'tcpPort="31000,31100"').
+8.2) Starting the Device Communication Server
+The "gtsdmtp", "tk10x", or "aspicore" server can be started as follows:
+/zzz> cd $GTS_HOME
+/usr/local/OpenGTS_1.2.3> bin/runserver.sh -s server
+Where "server" should be replaced with the specific name of the server to start (ie. "gtsdmtp", "tk10x", or
+"aspicore").
+OpenGTS Configuration and Installation Manual Page 30 of 62
+8.2a) Important note regarding ".sh" and ".bat" command files:
+Commands ending with ".sh" or ".bat" MUST be executed from the OpenGTS installation directory.
+Attempting to execute these commands from another directory may result in a "ClassNotFoundException" or
+"NoClassDefFoundError" error, or similar. (This means that you must cd to $GTS_HOME, then execute the
+command as "bin/<command>")
+Or, the Perl version of this command can be used without needing to be in the OpenGTS installation directory:
+/zzz> $GTS_HOME/bin/runserver.pl -s server
+On Windows, the command can omit the "-s" and can be entered as follows:
+C:\> cd \OpenGTS_1.2.3
+C:\OpenGTS_1.2.3\> \bin\runserver.bat server
+The server will initialize and start listening on the port(s) specified by the "ListenPorts" tag in the "dcservers.xml"
+file for the specific named DCServer. To change the listen port on the command line, you can add a "-port" argument
+as follows:
+/zzz> $GTS_HOME/bin/runserver.pl -s server -port 31123
+Or on Windows:
+C:\OpenGTS_1.2.3\> \bin\runserver.bat server -port:31123
+To set listening on port "31123".
+You can also add the command-line option "-debugMode" to enable debug-level logging.
+While running in "background" mode, the output logs are stored in the file "$GTS_HOME/logs/server.log". (The file
+"server.out" is also created by "runserver.pl" to capture output to stdout/stderr, but will typically remain empty).
+When testing/debugging, you may also start a server "interactively". That is, the server is run in the foreground (ie. not
+'backgrounded'), and all logging output is sent to the console instead of the log file. To start a server "interactively", add
+the option "-i" to the command line, as follows:
+/zzz> $GTS_HOME/bin/runserver.pl -s server -i
+(To stop the server in this mode, simply press 'Control-C')
+8.3) Stopping the Device Communication Server
+When started in "background" mode (ie. Without the "-i" option), a "Process ID" (PID) file is created at
+"$GTS_HOME/logs/server.pid", which contains the process-id of the backgrounded task. This file is used to stop the
+server with the command:
+/zzz> $GTS_HOME/bin/runserver.pl -s server -kill
+Where "server" should be replaced with the specific name of the server to start (ie. "gtsdmtp", "tk10x", or
+"aspicore").
+OpenGTS Configuration and Installation Manual Page 31 of 62
+On Linux systems, the Perl command "psjava", included with OpenGTS, can be used to display information regarding
+which Device Communication Servers are currently runningr:
+/zzz> $GTS_HOME/bin/psjava
+PID Parent L User Java class/jar
+------ ------ - -------- -------------------------------------------------------
+215( 1) 1 opengts org.apache.catalina.startup.Bootstrap
+8115( 1) 1 opengts /usr/local/OpenGTS_1.2.3/build/lib/gtsdmtp.jar
+8120( 1) 1 opengts /usr/local/OpenGTS_1.2.3/build/lib/tk10x.jar
+8123( 1) 1 opengts /usr/local/OpenGTS_1.2.3/build/lib/aspicore.jar
+8129( 1) 1 opengts /usr/local/OpenGTS_1.2.3/build/lib/template.jar
+This command lists all known running Java processes, with their associated PID (process-id), parent PID, user, and
+Java class or jar file which is currently running. The "org.apache.catalina.startup.Bootstrap" process indicates
+that Apache Tomcat is running with the indicated PID. "gtsdmtp", "tk10x", "aspicore", and "template" indicate their
+respective running Device Communication Servers.
+8.4) Adding a New Device Record
+Once the proper device communication server (DCS) is running, login to an account you wish to have own the
+device/phone you will be tracking and add a new Device/Vehicle record on the "Device Admin" page.
+OpenDMTP:
+OpenDMTP devices typically use the actual "account" and "device" ID's. In this case make sure the account and device
+id programmed into the OpenDMTP compliant device match the same account and device id created within the
+OpenGTS system.
+TK10x:
+TK102/TK103 devices typically report their unique identifying information using the IMEI number of the modem. On the
+"Device Admin" page, set the "Unique ID" field to the IMEI value in the format [ tk_12345679012345 ], where
+"123456789012345" is the IMEI number of the phone (The "tk_" prefix is used to help identify the type of device
+communication server used to parse the data – in this case TK102/TK103).
+Aspicore:
+The Aspicore client software reports the unique identifying information using the IMEI number of the phone. On the
+"Device Admin" page, set the "Unique ID" field to the IMEI value in the format [ s60_12345679012345 ], where
+"123456789012345" is the IMEI number of the phone (The "s60_" prefix is used to help identify the type of device
+communication server used to parse the data – in this case Aspicore).
+OpenGTS Configuration and Installation Manual Page 32 of 62
+9) Creating your own Device Communication Server
+In order for OpenGTS to receive data from a device, a customized "Device Communication Server" will need to be
+implemented that understands the protocol used to communicate with the remote device, and insert received events into
+the SQL database. This section provides a brief description of the example 'template' servers provided with OpenGTS
+for implementing your own remote device communication server.
+The method used by remote devices to transport events to the server varies greatly with the manufacturer of the device.
+Some transport data to a server via SMS messages, some use an SMTP email transport to send data to a server, some
+use an HTTP-based protocol which encode data in the request to the server, and many use some form of raw-socket
+based communication (via TCP/UDP) to connect to a listener on the server to transmit data. In order to create a device
+communication server that is able to parse incoming data from a device, an intimate understanding of the specifics of
+the protocol used by the device manufacturer is required. OpenGTS includes examples for HTTP-based servers, and
+raw-socket based servers (supporting both TCP and UDP), however, since each device manufacturer typically has their
+own protocol and way of transporting data, these example servers cannot be assumed to just-work with any/every
+device. Depending on the particular device chosen, there may be a significant and substantial amount of work
+necessary in order to support the chosen hardware device.
+The first, and most important, step when starting to implement a device communication server for a chosen hardware
+device is to obtain and fully understand the protocol documentation from the manufacturer of the device. While httpbased
+communication can often be reverse-engineered from observing the data arriving at the server, attempting to
+reverse-engineer a raw-socket based protocol can prove extremely difficult, if not impossible, without proper protocol
+documentation.
+9.a) Important note regarding the implemention of a device communication server:
+Implementing a device communication server for a given device may take a significant and substantial amount
+of programming work to accomplish, depending on the device protocol. To implement a server, you will likely
+need an in-depth understanding of TCP/UDP based communication, and a good understanding of Java
+programming techniques, including socket communication, multi-threading, and possibly bitwise manipulation
+techniques for extracting bit fields from binary data (including knowing whether the tracking device sends data
+in big-endian or little-endian formats). If using an http-based protocol, you may also need an understanding of
+how servlets are built, and how they operate within a Servlet container, such as Apache Tomcat.
+OpenGTS Configuration and Installation Manual Page 33 of 62
+9.1) HTTP Based Device Communication Servers (using the "gprmc" servlet)
+[Skills required: Java, Servlets, HTTP based protocols]
+HTTP-based communication is typically the easiest to implement. If your remote tracking device sends messages to the
+server using an HTTP-base communication protocol, then the example server 'gprmc' can be modified to parse
+received data and insert it into the SQL database. The sources for the 'gprmc' server (named after the $GPRMC record
+in the NMEA-0183 protocol) can be found in the OpenGTS source directory "src/org/opengts/war/gprmc" and
+runs as a Servlet in a servlet container such as Apache Tomcat (and uses the same access ports configured for
+Tomcat).
+9.1.1) Configuring the "gprmc" Servlet:
+This module has many built-in configurable options and may only need special customization properties which can be
+specified in the "webapp.conf" file. The following is a list of configurable properties available for the "gprmc" httpbased
+device communication server:
+Data format/value Property Keys:
+– gprmc.logName
+Logging output name.
+Default value: gprmc
+– gprmc.uniquePrefix
+UniqueID prefix, used when lookup up Device.
+Defaults value: (same as "gprmc.logName" property value)
+– gprmc.defaultAccountID
+Default account ID.
+Default value: gprmc
+– gprmc.minimumSpeedKPH
+Minimum acceptable speed (speeds less than this value will be set to '0')
+Default value: 0.0
+– gprmc.estimateOdometer
+If true, a GPS based odometer will be calculated.
+Default value: false
+– gprmc.simulateGeozones
+If true, a geozone arrival/departures will be detected, and the appropriate additional events will be created.
+Default value: false
+– gprmc.dateFormat
+Date format for 'date' parameter.
+Valid values: NONE, EPOCH, YMD, DMY, MDY
+Default value: YMD
+– gprmc.response.ok
+Response returned to device on on successful data receipt.
+Default value: (nothing returned)
+– gprmc.response.error
+Response on returned to device on on unsuccessful (error) data receipt.
+Default value: (nothing returned)
+OpenGTS Configuration and Installation Manual Page 34 of 62
+URL Parameter Property Keys:
+– gprmc.parm.unique
+URL Parameter Key: Unique-ID
+Default value: id
+– gprmc.parm.account
+URL Parameter Key: Account-ID
+Default value: acct
+– gprmc.parm.device
+URL Parameter Key: Device-ID
+Default value: dev
+– gprmc.parm.auth
+URL Parameter Key: Auth/Password (not used)
+Default value: (blank)
+– gprmc.parm.status
+URL Parameter Key: StatusCode
+Default value: code
+– gprmc.parm.gprmc
+URL Parameter Key: GPRMC (the NMEA-0183 $GPRMC record is expected for this value of this parameter)
+Default value: gprmc
+– gprmc.parm.date
+URL Parameter Key: Date (ignored if 'gprmc.parm.gprmc' is specified)
+Default value: date
+– gprmc.parm.time
+URL Parameter Key: Time (ignored if 'gprmc.parm.gprmc' is specified)
+Default value: time
+– gprmc.parm.latitude
+URL Parameter Key: Latitude (ignored if 'gprmc.parm.gprmc' is specified)
+Default value: lat
+– gprmc.parm.longitude
+URL Parameter Key: Longitude (ignored if 'gprmc.parm.gprmc' is specified)
+Default value: lon
+– gprmc.parm.speed
+URL Parameter Key: Speed(kph) parameter key (ignored if 'gprmc.parm.gprmc' is specified)
+Default value: speed
+– gprmc.parm.heading
+URL Parameter Key: Heading(degrees) (ignored if 'gprmc.parm.gprmc' is specified)
+Default value: head
+– gprmc.parm.altitude
+URL Parameter Key: Altitude(meters)
+Default value: alt
+– gprmc.parm.odometer
+URL Parameter Key: Odometer(kilometers)
+Default value: odom
+– gprmc.parm.address
+URL Parameter Key: Reverse-Geocoded Address
+Default value: addr
+– gprmc.parm.driver
+URL Parameter Key: Driver ID
+Default value: drv
+– gprmc.parm.message
+URL Parameter Key: Message
+Default value: msg
+OpenGTS Configuration and Installation Manual Page 35 of 62
+9.1.2) Default "gprmc" Configuration:
+The default "gprmc" cofiguration (with no special configuration changes made in the "webapp.conf" file) expects a
+http-based URL formatted as follows: (the URL below displays the various fields on separate lines, but is normally sent
+to the server as a single URL all on a single line):
+http://example.com:8080/gprmc/Data?
+id=123456789012345&
+code=0xF020&
+gprmc=$GPRMC,080701.00,A,3128.7540,N,14257.6714,W,000.0,000.0,180707,,,A*1C
+Where
+http://example.com:8080/gprmc/Data?
+Represents the host:port ("example.com:8080") and "gprmc.war" servlet location ("/gprmc/Data?")
+123456789012345
+Represents the unique mobile ID of the device (such as the IMEI#). (This value should be entered into the "Device Admin"
+page "Unique ID" field in the format "gprmc_123456789012345").
+0xF020
+Represents the status code used for identifying the reason for the event. The status code used here should match the hex, or
+decimal value of a status code listed in the "Status Codes and Descriptions" manual at the following location:
+http://www.geotelematic.com/docs/StatusCodes.pdf
+In addition to one of the above hex/decimal status codes, any of the following text code names may also be used, which will
+automatically be converted into it's corresponding hex-based status code when it is entered into the EventData table: GPS,
+PANIC, WAYMARK, etc, (see gprmc source module "Data.java" for a current list).
+$GPRMC,080701.00,A,3128.7540,N,14257.6714,W,000.0,000.0,180707,,,A*1C
+Represents the NMEA-0183 $GPRMC record straight from the GPS receiver.
+9.1.3) Building the "gprmc" Servlet:
+The "gprmc.war" file is automatically built by the OpenGTS "ant all" command, but can also be built specifically with
+the following command:
+ant gprmc
+After making any configuration changes to the above properties, the "gprmc.war" file must be rebuilt and redeployed in
+order for the configuration changes to take effect.
+If you need to make changes to this source module to support your device, it is recommended that you copy the source
+files to an new directory (remember to change the Java package name, and also copy/modify the "web.xml" information
+found at "war/gprmc/WEB-INF/web.xml"), then modify the copied sources with the specific changes required by your
+tracking device.
+This module will need to be configured and installed in a servlet container, similar to the installation process used for
+other servlets in this documentation.
+Consult the 'gprmc' server source code directly for additional information. (Source code for this module can be found in
+the directory "src/org/opengts/war/gprmc/").
+OpenGTS Configuration and Installation Manual Page 36 of 62
+9.2) Raw Socket Based Device Communication Server
+[Skills required: Java, TCP/UDP socket communication, multi-threading, bitwise manipulation, general client/server
+protocols]
+If your remote tracking device sends messages to the server using a socket-based communication protocol, then the
+example 'template' server can be modified to parse received data and insert it into the SQL database. The sources for
+the 'template' server can be found in the OpenGTS source directory "src/org/opengts/servers/template".
+This server type runs as a separate process listening on a selected socket port for incoming TCP/UDP connections.
+You will likely need to make some significant changes to the source code to support your particular device. It is
+recommended that you copy the source files to an new directory (remember to change the Java package name), then
+modify the copied sources with the specific changes required by your tracking device.
+Here are some of the main attributes of the protocol that need to be determined before starting to implement a TCP/UDP
+socket based device communication server:
+• Are the protocol packets transmitted in ASCII, Binary, or both?
+• How is the actual length of a client packet determined (this is extremely important)?
+• What are the various types and content of packets received from the client?
+• For binary packets, are integer fields encoded in Big-Endian or Little-Endian format?
+• What response packets, if any, is the client expecting to receive from the server?
+The example 'template' server contains the following source modules:
+Constants.java – This module constains most of the customized configurable options used to support your
+specific remote device protocol. Such as timeouts, minimum/maximum packet lengths, ASCII/Binary encoding,
+etc. The basic information regarding the type of protocol should be set in this module.
+Main.java – This is the main entry point for the server and will not likely need to be modified.
+TrackClientPacketHandler.java – The purpose of this module is to understands the specific characteristics
+of the communication protocol for the remote device, and will require most of the significant customization
+required to support your remote device. This is where incoming client packets are identified, data is parsed and
+inserted into the tables, and any required responses are returned to the client device.
+TrackServer.java – This is a wrapper/handler for a TCP/UDP session and delegates most control to the
+TrackClientPacketHandler class.
+This server environment/framework handles listening for incoming connections and multi-threading for you (this server
+can handle multiple simultaneous incoming connections), as well as most error handling.
+When using the example 'template' server as the basis for your own device communication server, it is recommended
+that you copy the 'template' files into a new folder (and thus a new Java package) named after your chosen
+tracking/telematic device (ie. such as "acme1000"). The "build.xml" file should also be modified to include a 'target'
+for your chosen server name. To build the example 'template' server, the Ant target 'template' can be used as
+follows:
+> ant template
+This 'template' target in 'build.xml' can be copied to create your own specific ant build target for your chosen device
+communication server name.
+Consult the 'template' server source code directly for additional customization information.
+The server "icare" is also available (in the source directory "src/org/opengts/servers/icare/"), which supports
+the ICare G3300 device. This device communication server module can also be examined for help in creating your own
+customized device communication server.
+OpenGTS Configuration and Installation Manual Page 37 of 62
+9.2.1) Starting the Device Communication Server
+Once your server jar file has been created, you can use the "bin/runserver.sh" command (or "runserver.bat" on
+Windows) to start your device communication server as follows:
+/zzz> cd $GTS_HOME
+/usr/local/OpenGTS_1.2.3> bin/runserver.sh -s template
+9.2.1.a) Important note regarding ".sh" and ".bat" command files:
+Commands ending with ".sh" or ".bat" MUST be executed from the OpenGTS installation directory. Attempting
+to execute these commands from another directory may result in a "ClassNotFoundException" or
+"NoClassDefFoundError" error, or similar. (This means that you must cd to $GTS_HOME, then execute the
+command as "bin/<command>")
+Or, the Perl version of this command can be used without needing to be in the OpenGTS installation directory:
+/zzz> $GTS_HOME/bin/runserver.pl -s template
+On Windows, the command can omit the "-s" and can be entered as follows:
+C:\> cd \OpenGTS_1.2.3
+C:\OpenGTS_1.2.3\> \bin\runserver.bat template
+The server will initialize and start listening on the port(s) specified in the "dcservers.xml" file for the "template"
+server. The default port is 31200. To change the listen port on the command line, a "-port" can be added as follows:
+/zzz> $GTS_HOME/bin/runserver.pl -s template -port 31123
+Or, on Windows:
+C:\OpenGTS_1.2.3\> \bin\runserver.bat template -port:31123
+To set listening on port "31123" (for example).
+You can also add the command-line option "-debugMode" to enable debug-level logging.
+While running in "background" mode, the output logs are stored in the file "$GTS_HOME/logs/template.log". (The
+file "template.out" is also created in this directory to catch any stdout/stderr messages which are displayed within the
+server that don't use the 'Print' logging feature built into OpenGTS. Typically, this file should alway be empty).
+When testing/debugging, you may also start a server "interactively". That is, the server is run in the foreground (ie. not
+'backgrounded'), and all logging output is sent to the console instead of the log file. To start a server "interactively", add
+the option "-i" to the command line, as follows:
+/zzz> $GTS_HOME/bin/runserver.pl -s template -i
+(To stop the server in this mode, simply press 'Control-C')
+OpenGTS Configuration and Installation Manual Page 38 of 62
+9.2.2) Stopping the Device Communication Server
+When started in "background" mode (ie. Without the "-i" option), a "Process ID" (PID) file is created at
+"$GTS_HOME/logs/template.pid", which contains the process-id of the backgrounded task. This file is used to stop
+the server with the command:
+/zzz> $GTS_HOME/bin/runserver.pl -s template -kill
+On Linux systems, the Perl command "psjava", included with OpenGTS, can be used to display information regarding
+which Device Communication Servers are currently running, including the "template" server:
+/zzz> $GTS_HOME/bin/psjava
+PID Parent L User Java class/jar
+------ ------ - -------- -------------------------------------------------------
+215( 1) 1 opengts org.apache.catalina.startup.Bootstrap
+8115( 1) 1 opengts /usr/local/OpenGTS_1.2.3/build/lib/gtsdmtp.jar
+8129( 1) 1 opengts /usr/local/OpenGTS_1.2.3/build/lib/template.jar
+This command lists all known running Java processes, with their associated PID (process-id), parent PID, user, and
+Java class or jar file which is currently running. The "org.apache.catalina.startup.Bootstrap" process indicates
+that Apache Tomcat is running with the indicated PID. "gtsdmtp" and "template" indicate their respective running
+Device Communication Servers.
+9.3) Runtime XML Configuration File.
+The raw socket-based device communication servers (such as the example 'template' server) support the runtime
+configuration using the file "dcservers.xml". An example format of the "dcservers.xml" is as follows:
+<DCServerConfig
+bindAddress=""
+backlog=""
+portOffset="0"
+includeDir="dcservers"
+>
+<Include file="dcserver_template.xml" optional="true"/>
+<DCServer name="icare">
+...
+</DCServer>
+...
+</DCServerConfig>
+The attributes for the DCServerConfig tag include the following:
+bindAddress : This attribute specifies the local IP address or host name to which the server will bind. This is
+useful when the local server has more than one IP address, and needs to send UDP packets back to a client
+device. If left blank, the server will bind to the default local IP address.
+backlog : The maximum queue length for incoming connection indications (a request to connect). If a
+connection indication arrives when the queue is full, the connection is refused. If left blank, or is 0 or less, then the
+default backlog value will be used. See the class "java.net.ServerSocket" for more information.
+portOffset : This value is added to any port specification. Unless otherwise needed for specific system
+requirements, this value should remain "0".
+includeDir : If the "DCServerConfig" tag contains any "Include" sub-tags, this is the directory that will be
+search for the included files.
+OpenGTS Configuration and Installation Manual Page 39 of 62
+An example "Include" tag format is as follows:
+<Include file="dcserver_template.xml" optional="true"/>
+The attributes for the Include tag include the following:
+file : This attribute specifies the name of the file to include. The included file must also be a properly
+formatted DCServerConfig XML file. All device communication servers defined within this included file (as defined
+by the "DCServer" tags) will be added to the device communication servers defined elswhere in this XML file.
+Recursive Include directives are not allowed.
+optional : This attribute specifies whether the include file is required to exist. If this value is "true" and the
+include file does not exist, and error will be displayed. If this value is "false" and the include file does not exist,
+then the Include directory is quietly ignored.
+An example "DCServer" tag format is as follows:
+<DCServer name="template">
+<Description><![CDATA[
+Example Template Server
+]]></Description>
+<UniqueIDPrefix><![CDATA[
+template_
+imei_
+*
+]]></UniqueIDPrefix>
+<ListenPorts
+tcpPort="31200"
+udpPort="31200"
+/>
+<Properties>
+<Property key="minimumSpeedKPH">4.0</Property>
+<Property key="estimateOdometer">true</Property>
+<Property key="simulateGeozones">true</Property>
+</Properties>
+</DCServer>
+The attribute for the DCServer tag are as follows:
+name : This attribute is required and specifies the name of the device communication server. The specified
+name should be unique among all loaded device communication servers. If a name of a device communication
+server is encountered that has already been defined, the subsequent named DCServer entry will be ignored.
+"Description" sub-tag:
+This tag specifies the optional description of the device communication server.
+"UniqueIDPrefix" sub-tag:
+This tag specifies the optional "Unique-ID" prefixes that will be used when looking up the device mobile-id in the
+Device table. In the order specified, the specified prefix is prepended to the mobile-id then the resulting ID is
+looked-up in the Device table "uniqueID" field. If not found, then the next prefix will be used. The prefix
+specification "*" means that the mobile-id will be used as-is (without any prepended prefix).
+OpenGTS Configuration and Installation Manual Page 40 of 62
+"ListenPorts" sub-tag:
+This tag specifies the ports on which the device communication server will listen for incoming connections from
+remote devices. The attribute "tcpPort" specifies the port on which a TCP listener will be started. The attribute
+"udpPort" specified the port on which a UDP listener will be started. If either "tcpPort" or "udpPort" is blank, or
+not specified, the the corresponding "listener" will not be started.
+"Properties" sub-tag:
+This tag includes "Property" sub-tags which specify runtime properties which can be used to further specify the
+behavior of the device communication server at runtime. The standard properties that most device communication
+server recognize are as follows:
+minimumSpeedKPH : (Double) This property specifies the minimum acceptable GPS-based speed. A speed
+value beow the value specified by this property will be considered a speed of '0'. This is used to mitigate GPS
+speed values which can indicate motion, even when the GPS receiver is stationary.
+estimateOdometer : (Boolean) This property specifies the whether a GPS-based odometer value should be
+automatically calculated from the valid GPS locations reported by the incoming event. The odometer value of the
+current event is calculated by determining the distance from the previous event location to the current event
+location, then adding this distance to the previous odometer value.
+simulateGeozones : (Boolean) This property specifies whether incoming events should be checked for
+Geozone arrive/depart occurances. If the current event was found to have arrive, or have departed, from a
+Geozone (as listed in the Geozone table), then the appropriate event, with the arrive/depart status code, will be
+generated and inserted into the EventData table.
+Specific device communication servers may also support other property specifications.
+OpenGTS Configuration and Installation Manual Page 41 of 62
+

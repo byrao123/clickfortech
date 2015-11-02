@@ -797,7 +797,7 @@ public class CheckInstall
                          "Supported version of Java is not installed, or is not referenced in executable path",
                          FIX_JAVA_VERSION);
             } else
-            if (javaSpecVal.startsWith("1.6")) {
+            if (javaSpecVal.startsWith("1.6") || javaSpecVal.startsWith("1.8")) {
                 printVariable("(Version)", javaSpecVal, ""); // recommended version
                 isJava6plus = true;
             } else
