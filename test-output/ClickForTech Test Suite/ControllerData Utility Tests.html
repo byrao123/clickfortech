@@ -1,0 +1,295 @@
+<html>
+<head>
+<title>TestNG:  ControllerData Utility Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>ControllerData Utility Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>43/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Sep 02 09:26:11 UTC 2025</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (63 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testDateParsing()'><b>testDateParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 210507, 21, 5, 2007, May 21, 2007 (210507)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLongitudeParsing()'><b>testLongitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 00000.0000, E, 0.0, Zero longitude East</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testStatusCodePrefix()'><b>testStatusCodePrefix</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: AUTO, AUTO, No prefix</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLongitudeParsing()'><b>testLongitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 18000.0000, E, 180.0, 180 degrees East (invalid)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testBatteryPercentCalculation()'><b>testBatteryPercentCalculation</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 3.785, 0.3, 30% voltage level</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLongitudeParsing()'><b>testLongitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 14271.7421, W, -143.1957, West longitude</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testStatusCodePrefix()'><b>testStatusCodePrefix</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: BSOS, SOS, SOS with B prefix</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testStringParsing()'><b>testStringParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: single, ,, 1, Single field</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testStatusCodePrefix()'><b>testStatusCodePrefix</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: B-SOS, SOS, SOS with B- prefix</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLongitudeParsing()'><b>testLongitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: , E, 180.0, Empty longitude string</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLongitudeParsing()'><b>testLongitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 00000.0000, W, 0.0, Zero longitude West</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testDateParsing()'><b>testDateParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 10101, 1, 1, 2001, January 1, 2001 (10101)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLongitudeParsing()'><b>testLongitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: invalid, E, 180.0, Invalid longitude string</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testConstants()'><b>testConstants</b><br>Test class: com.click4tech.ControllerDataUtilTest</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLatitudeParsing()'><b>testLatitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 4500.0000, N, 45.0, 45 degrees North</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testKilometersPerKnotConstant()'><b>testKilometersPerKnotConstant</b><br>Test class: com.click4tech.ControllerDataUtilTest</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testStringParsing()'><b>testStringParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: field1,field2,field3, ,, 3, Simple comma-separated values</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testTimeParsing()'><b>testTimeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 23000, 2, 30, 0, 02:30:00 (23000)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLatitudeParsing()'><b>testLatitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: , N, 90.0, Empty latitude string</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testTimeParsing()'><b>testTimeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 124422, 12, 44, 22, 12:44:22 (124422)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testDateParsing()'><b>testDateParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 110809, 11, 8, 2009, August 11, 2009 (110809)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testStringParsing()'><b>testStringParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: a,b,c,d,e, ,, 5, Five fields</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testBatteryPercentCalculation()'><b>testBatteryPercentCalculation</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 3.875, 0.5, middle voltage (3.875V)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLatitudeParsing()'><b>testLatitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: invalid, N, 90.0, Invalid latitude string</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testStatusCodePrefix()'><b>testStatusCodePrefix</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: B-AUTO, AUTO, B- prefix</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testBatteryPercentCalculation()'><b>testBatteryPercentCalculation</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 3.65, 0.0, minimum voltage (3.65V)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLongitudeParsing()'><b>testLongitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 14271.7421, E, 143.1957, East longitude</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testTimeParsing()'><b>testTimeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 0, 0, 0, 0, 00:00:00 (0)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLatitudeParsing()'><b>testLatitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 0000.0000, N, 0.0, Zero latitude North</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testStatusCodePrefix()'><b>testStatusCodePrefix</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: BAUTO, AUTO, B prefix</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testBatteryPercentCalculation()'><b>testBatteryPercentCalculation</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 4.2, 1.0, above maximum voltage (4.2V)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testStringParsing()'><b>testStringParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: $GPRMC,023000.000,A,3130.0577,N,14271.7421,W,0.53,208.37,210507,,*19,AUTO, ,, 13, Valid GPRMC string</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testBatteryPercentCalculation()'><b>testBatteryPercentCalculation</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 4.1, 1.0, maximum voltage (4.1V)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testStringParsing()'><b>testStringParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: , ,, 1, Empty string</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLatitudeParsing()'><b>testLatitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 3130.0577, S, -31.50096167, South latitude</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testBatteryPercentCalculation()'><b>testBatteryPercentCalculation</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 3.965, 0.7, 70% voltage level</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testBatteryPercentCalculation()'><b>testBatteryPercentCalculation</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 3.5, 0.0, below minimum voltage (3.5V)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testTimeParsing()'><b>testTimeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 235959, 23, 59, 59, 23:59:59 (235959)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLatitudeParsing()'><b>testLatitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 0000.0000, S, 0.0, Zero latitude South</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testStatusCodePrefix()'><b>testStatusCodePrefix</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: SOS, SOS, SOS no prefix</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testTimeParsing()'><b>testTimeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 120000, 12, 0, 0, 12:00:00 (120000)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testDateParsing()'><b>testDateParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 311299, 31, 12, 2099, December 31, 2099 (311299)</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+<tr>
+<td title='com.click4tech.ControllerDataUtilTest.testLatitudeParsing()'><b>testLatitudeParsing</b><br>Test class: com.click4tech.ControllerDataUtilTest<br>Parameters: 3130.0577, N, 31.50096167, North latitude</td>
+<td></td>
+<td>0</td>
+<td>com.click4tech.ControllerDataUtilTest@52525845</td></tr>
+</table><p>
+</body>
+</html>

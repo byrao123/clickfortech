@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="43" passed="43" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-02T09:26:11 UTC" name="ClickForTech Test Suite" finished-at="2025-09-02T09:26:11 UTC" duration-ms="63">
+    <groups>
+    </groups>
+    <test started-at="2025-09-02T09:26:11 UTC" name="ControllerData Utility Tests" finished-at="2025-09-02T09:26:11 UTC" duration-ms="63">
+      <class name="com.click4tech.ControllerDataUtilTest">
+        <test-method signature="testBatteryPercentCalculation(double,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testBatteryPercentCalculation" data-provider="batteryVoltageData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4.1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1.0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[maximum voltage (4.1V)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBatteryPercentCalculation -->
+        <test-method signature="testBatteryPercentCalculation(double,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testBatteryPercentCalculation" data-provider="batteryVoltageData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3.65]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[minimum voltage (3.65V)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBatteryPercentCalculation -->
+        <test-method signature="testBatteryPercentCalculation(double,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testBatteryPercentCalculation" data-provider="batteryVoltageData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3.875]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0.5]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[middle voltage (3.875V)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBatteryPercentCalculation -->
+        <test-method signature="testBatteryPercentCalculation(double,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testBatteryPercentCalculation" data-provider="batteryVoltageData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4.2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1.0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[above maximum voltage (4.2V)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBatteryPercentCalculation -->
+        <test-method signature="testBatteryPercentCalculation(double,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testBatteryPercentCalculation" data-provider="batteryVoltageData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3.785]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0.3]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[30% voltage level]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBatteryPercentCalculation -->
+        <test-method signature="testBatteryPercentCalculation(double,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testBatteryPercentCalculation" data-provider="batteryVoltageData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3.5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[below minimum voltage (3.5V)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBatteryPercentCalculation -->
+        <test-method signature="testBatteryPercentCalculation(double,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testBatteryPercentCalculation" data-provider="batteryVoltageData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3.965]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0.7]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[70% voltage level]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBatteryPercentCalculation -->
+        <test-method signature="testConstants()[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testConstants" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testConstants -->
+        <test-method signature="testDateParsing(long,int,int,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testDateParsing" data-provider="dateParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[210507]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[21]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2007]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[May 21, 2007 (210507)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDateParsing -->
+        <test-method signature="testDateParsing(long,int,int,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testDateParsing" data-provider="dateParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[10101]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2001]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[January 1, 2001 (10101)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDateParsing -->
+        <test-method signature="testDateParsing(long,int,int,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testDateParsing" data-provider="dateParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[110809]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2009]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[August 11, 2009 (110809)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDateParsing -->
+        <test-method signature="testDateParsing(long,int,int,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testDateParsing" data-provider="dateParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[311299]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[31]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2099]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[December 31, 2099 (311299)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDateParsing -->
+        <test-method signature="testKilometersPerKnotConstant()[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testKilometersPerKnotConstant" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testKilometersPerKnotConstant -->
+        <test-method signature="testLatitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLatitudeParsing" data-provider="latitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3130.0577]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[31.50096167]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[North latitude]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLatitudeParsing -->
+        <test-method signature="testLatitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLatitudeParsing" data-provider="latitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0000.0000]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Zero latitude North]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLatitudeParsing -->
+        <test-method signature="testLatitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLatitudeParsing" data-provider="latitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3130.0577]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[S]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[-31.50096167]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[South latitude]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLatitudeParsing -->
+        <test-method signature="testLatitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLatitudeParsing" data-provider="latitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4500.0000]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[45.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[45 degrees North]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLatitudeParsing -->
+        <test-method signature="testLatitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLatitudeParsing" data-provider="latitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0000.0000]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[S]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Zero latitude South]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLatitudeParsing -->
+        <test-method signature="testLatitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLatitudeParsing" data-provider="latitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[90.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Empty latitude string]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLatitudeParsing -->
+        <test-method signature="testLatitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLatitudeParsing" data-provider="latitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[90.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Invalid latitude string]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLatitudeParsing -->
+        <test-method signature="testLongitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLongitudeParsing" data-provider="longitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[14271.7421]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[W]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[-143.1957]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[West longitude]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLongitudeParsing -->
+        <test-method signature="testLongitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLongitudeParsing" data-provider="longitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[00000.0000]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[E]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Zero longitude East]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLongitudeParsing -->
+        <test-method signature="testLongitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLongitudeParsing" data-provider="longitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[14271.7421]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[E]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[143.1957]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[East longitude]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLongitudeParsing -->
+        <test-method signature="testLongitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLongitudeParsing" data-provider="longitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[18000.0000]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[E]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[180.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[180 degrees East (invalid)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLongitudeParsing -->
+        <test-method signature="testLongitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLongitudeParsing" data-provider="longitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[00000.0000]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[W]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Zero longitude West]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLongitudeParsing -->
+        <test-method signature="testLongitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLongitudeParsing" data-provider="longitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[E]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[180.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Empty longitude string]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLongitudeParsing -->
+        <test-method signature="testLongitudeParsing(java.lang.String,java.lang.String,double,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testLongitudeParsing" data-provider="longitudeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[E]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[180.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Invalid longitude string]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLongitudeParsing -->
+        <test-method signature="testStatusCodePrefix(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testStatusCodePrefix" data-provider="statusCodePrefixData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[AUTO]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[AUTO]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[No prefix]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStatusCodePrefix -->
+        <test-method signature="testStatusCodePrefix(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testStatusCodePrefix" data-provider="statusCodePrefixData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[B-AUTO]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[AUTO]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[B- prefix]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStatusCodePrefix -->
+        <test-method signature="testStatusCodePrefix(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testStatusCodePrefix" data-provider="statusCodePrefixData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[BAUTO]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[AUTO]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[B prefix]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStatusCodePrefix -->
+        <test-method signature="testStatusCodePrefix(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testStatusCodePrefix" data-provider="statusCodePrefixData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[BSOS]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SOS]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SOS with B prefix]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStatusCodePrefix -->
+        <test-method signature="testStatusCodePrefix(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testStatusCodePrefix" data-provider="statusCodePrefixData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[B-SOS]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SOS]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SOS with B- prefix]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStatusCodePrefix -->
+        <test-method signature="testStatusCodePrefix(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testStatusCodePrefix" data-provider="statusCodePrefixData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SOS]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SOS]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SOS no prefix]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStatusCodePrefix -->
+        <test-method signature="testStringParsing(java.lang.String,java.lang.String,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testStringParsing" data-provider="stringParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[single]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[,]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Single field]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStringParsing -->
+        <test-method signature="testStringParsing(java.lang.String,java.lang.String,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testStringParsing" data-provider="stringParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[field1,field2,field3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[,]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Simple comma-separated values]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStringParsing -->
+        <test-method signature="testStringParsing(java.lang.String,java.lang.String,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testStringParsing" data-provider="stringParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[$GPRMC,023000.000,A,3130.0577,N,14271.7421,W,0.53,208.37,210507,,*19,AUTO]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[,]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Valid GPRMC string]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStringParsing -->
+        <test-method signature="testStringParsing(java.lang.String,java.lang.String,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testStringParsing" data-provider="stringParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[a,b,c,d,e]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[,]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Five fields]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStringParsing -->
+        <test-method signature="testStringParsing(java.lang.String,java.lang.String,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testStringParsing" data-provider="stringParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[,]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Empty string]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStringParsing -->
+        <test-method signature="testTimeParsing(long,int,int,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testTimeParsing" data-provider="timeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[23000]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[02:30:00 (23000)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTimeParsing -->
+        <test-method signature="testTimeParsing(long,int,int,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testTimeParsing" data-provider="timeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[124422]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[44]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[22]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[12:44:22 (124422)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTimeParsing -->
+        <test-method signature="testTimeParsing(long,int,int,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testTimeParsing" data-provider="timeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[235959]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[23]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[59]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[59]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[23:59:59 (235959)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTimeParsing -->
+        <test-method signature="testTimeParsing(long,int,int,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testTimeParsing" data-provider="timeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[00:00:00 (0)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTimeParsing -->
+        <test-method signature="testTimeParsing(long,int,int,int,java.lang.String)[pri:0, instance:com.click4tech.ControllerDataUtilTest@52525845]" started-at="2025-09-02T09:26:11 UTC" name="testTimeParsing" data-provider="timeParsingData" finished-at="2025-09-02T09:26:11 UTC" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[120000]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[12:00:00 (120000)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTimeParsing -->
+      </class> <!-- com.click4tech.ControllerDataUtilTest -->
+    </test> <!-- ControllerData Utility Tests -->
+  </suite> <!-- ClickForTech Test Suite -->
+</testng-results>
