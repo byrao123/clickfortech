@@ -68,4 +68,43 @@
     nbproject/build-impl.xml file. 
 
     -->
+    
+    <!-- Custom targets for TestNG testing -->
+    <target name="compile-tests" depends="compile" description="Compile test files">
+        <mkdir dir="build/test-classes"/>
+        <javac srcdir="tests" destdir="build/test-classes" includeantruntime="false">
+            <classpath>
+                <path path="${build.classes.dir}"/>
+                <fileset dir="lib">
+                    <include name="testng-7.8.0.jar"/>
+                    <include name="mockito-core-5.5.0.jar"/>
+                    <include name="dmtpserv.jar"/>
+                </fileset>
+                <fileset dir="lib/javaee-api-7.0">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+    </target>
+    
+    <target name="test" depends="compile-tests" description="Run TestNG tests">
+        <mkdir dir="build/test-results"/>
+        <taskdef resource="testngtasks" classpath="lib/testng-7.8.0.jar"/>
+        <testng outputdir="build/test-results" haltonfailure="false">
+            <classpath>
+                <path path="${build.classes.dir}"/>
+                <path path="build/test-classes"/>
+                <fileset dir="lib">
+                    <include name="testng-7.8.0.jar"/>
+                    <include name="mockito-core-5.5.0.jar"/>
+                    <include name="dmtpserv.jar"/>
+                </fileset>
+                <fileset dir="lib/javaee-api-7.0">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+            <xmlfileset dir="tests" includes="testng.xml"/>
+        </testng>
+    </target>
+    
 </project>

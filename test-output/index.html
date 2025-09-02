@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-ClickForTech_Test_Suite" class="navigator-link">
+              <span class="suite-name border-passed">ClickForTech Test Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-ClickForTech_Test_Suite" class="navigator-link ">
+                    <span>testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-ClickForTech_Test_Suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-ClickForTech_Test_Suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-ClickForTech_Test_Suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-ClickForTech_Test_Suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-ClickForTech_Test_Suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-ClickForTech_Test_Suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">43 methods,   43 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-ClickForTech_Test_Suite" class="hide-methods passed suite-ClickForTech_Test_Suite"> (hide)</a> <!-- hide-methods passed suite-ClickForTech_Test_Suite -->
+                      <a href="#" panel-name="suite-ClickForTech_Test_Suite" class="show-methods passed suite-ClickForTech_Test_Suite"> (show)</a> <!-- show-methods passed suite-ClickForTech_Test_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-ClickForTech_Test_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testBatteryPercentCalculation(3.785, 0.3, 30% voltage level)">testBatteryPercentCalculation(3.785, 0.3, 30% voltage level)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testBatteryPercentCalculation(3.875, 0.5, middle voltage (3.875V))">testBatteryPercentCalculation(3.875, 0.5, middle voltage (3.875V))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testBatteryPercentCalculation(3.65, 0.0, minimum voltage (3.65V))">testBatteryPercentCalculation(3.65, 0.0, minimum voltage (3.65V))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testBatteryPercentCalculation(4.2, 1.0, above maximum voltage (4.2V))">testBatteryPercentCalculation(4.2, 1.0, above maximum voltage (4.2V))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testBatteryPercentCalculation(4.1, 1.0, maximum voltage (4.1V))">testBatteryPercentCalculation(4.1, 1.0, maximum voltage (4.1V))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testBatteryPercentCalculation(3.965, 0.7, 70% voltage level)">testBatteryPercentCalculation(3.965, 0.7, 70% voltage level)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testBatteryPercentCalculation(3.5, 0.0, below minimum voltage (3.5V))">testBatteryPercentCalculation(3.5, 0.0, below minimum voltage (3.5V))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testConstants">testConstants</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testDateParsing(210507, 21, 5, 2007, May 21, 2007 (210507))">testDateParsing(210507, 21, 5, 2007, May 21, 2007 (210507))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testDateParsing(10101, 1, 1, 2001, January 1, 2001 (10101))">testDateParsing(10101, 1, 1, 2001, January 1, 2001 (10101))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testDateParsing(110809, 11, 8, 2009, August 11, 2009 (110809))">testDateParsing(110809, 11, 8, 2009, August 11, 2009 (110809))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testDateParsing(311299, 31, 12, 2099, December 31, 2099 (311299))">testDateParsing(311299, 31, 12, 2099, December 31, 2099 (311299))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testKilometersPerKnotConstant">testKilometersPerKnotConstant</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLatitudeParsing(4500.0000, N, 45.0, 45 degrees North)">testLatitudeParsing(4500.0000, N, 45.0, 45 degrees North)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLatitudeParsing(, N, 90.0, Empty latitude string)">testLatitudeParsing(, N, 90.0, Empty latitude string)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLatitudeParsing(invalid, N, 90.0, Invalid latitude string)">testLatitudeParsing(invalid, N, 90.0, Invalid latitude string)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLatitudeParsing(0000.0000, N, 0.0, Zero latitude North)">testLatitudeParsing(0000.0000, N, 0.0, Zero latitude North)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLatitudeParsing(3130.0577, S, -31.50096167, South latitude)">testLatitudeParsing(3130.0577, S, -31.50096167, South latitude)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLatitudeParsing(0000.0000, S, 0.0, Zero latitude South)">testLatitudeParsing(0000.0000, S, 0.0, Zero latitude South)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLatitudeParsing(3130.0577, N, 31.50096167, North latitude)">testLatitudeParsing(3130.0577, N, 31.50096167, North latitude)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLongitudeParsing(00000.0000, E, 0.0, Zero longitude East)">testLongitudeParsing(00000.0000, E, 0.0, Zero longitude East)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLongitudeParsing(18000.0000, E, 180.0, 180 degrees East (invalid))">testLongitudeParsing(18000.0000, E, 180.0, 180 degrees East (invalid))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLongitudeParsing(14271.7421, W, -143.1957, West longitude)">testLongitudeParsing(14271.7421, W, -143.1957, West longitude)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLongitudeParsing(, E, 180.0, Empty longitude string)">testLongitudeParsing(, E, 180.0, Empty longitude string)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLongitudeParsing(00000.0000, W, 0.0, Zero longitude West)">testLongitudeParsing(00000.0000, W, 0.0, Zero longitude West)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLongitudeParsing(invalid, E, 180.0, Invalid longitude string)">testLongitudeParsing(invalid, E, 180.0, Invalid longitude string)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testLongitudeParsing(14271.7421, E, 143.1957, East longitude)">testLongitudeParsing(14271.7421, E, 143.1957, East longitude)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testStatusCodePrefix(AUTO, AUTO, No prefix)">testStatusCodePrefix(AUTO, AUTO, No prefix)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testStatusCodePrefix(BSOS, SOS, SOS with B prefix)">testStatusCodePrefix(BSOS, SOS, SOS with B prefix)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testStatusCodePrefix(B-SOS, SOS, SOS with B- prefix)">testStatusCodePrefix(B-SOS, SOS, SOS with B- prefix)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testStatusCodePrefix(B-AUTO, AUTO, B- prefix)">testStatusCodePrefix(B-AUTO, AUTO, B- prefix)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testStatusCodePrefix(BAUTO, AUTO, B prefix)">testStatusCodePrefix(BAUTO, AUTO, B prefix)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testStatusCodePrefix(SOS, SOS, SOS no prefix)">testStatusCodePrefix(SOS, SOS, SOS no prefix)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testStringParsing(single, ,, 1, Single field)">testStringParsing(single, ,, 1, Single field)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testStringParsing(field1,field2,field3, ,, 3, Simple comma-separated values)">testStringParsing(field1,field2,field3, ,, 3, Simple comma-separated values)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testStringParsing(a,b,c,d,e, ,, 5, Five fields)">testStringParsing(a,b,c,d,e, ,, 5, Five fields)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testStringParsing($GPRMC,023000.000,A,3130.0577,N,14271.7421,W,0.53,208.37,210507,,*19,AUTO, ,, 13, Valid GPRMC string)">testStringParsing($GPRMC,023000.000,A,3130.0577,N,14271.7421,W,0.53,208.37,210507,,*19,AUTO, ,, 13, Valid GPRMC string)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testStringParsing(, ,, 1, Empty string)">testStringParsing(, ,, 1, Empty string)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testTimeParsing(23000, 2, 30, 0, 02:30:00 (23000))">testTimeParsing(23000, 2, 30, 0, 02:30:00 (23000))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testTimeParsing(124422, 12, 44, 22, 12:44:22 (124422))">testTimeParsing(124422, 12, 44, 22, 12:44:22 (124422))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testTimeParsing(0, 0, 0, 0, 00:00:00 (0))">testTimeParsing(0, 0, 0, 0, 00:00:00 (0))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testTimeParsing(235959, 23, 59, 59, 23:59:59 (235959))">testTimeParsing(235959, 23, 59, 59, 23:59:59 (235959))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ClickForTech_Test_Suite" title="com.click4tech.ControllerDataUtilTest" class="method navigator-link" hash-for-method="testTimeParsing(120000, 12, 0, 0, 12:00:00 (120000))">testTimeParsing(120000, 12, 0, 0, 12:00:00 (120000))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-ClickForTech_Test_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-ClickForTech_Test_Suite" class="panel ClickForTech_Test_Suite">
+          <div class="suite-ClickForTech_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.click4tech.ControllerDataUtilTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBatteryPercentCalculation(3.785, 0.3, 30% voltage level)">
+                  </a> <!-- testBatteryPercentCalculation(3.785, 0.3, 30% voltage level) -->
+                  <span class="method-name">testBatteryPercentCalculation</span>
+                  <span class="parameters">(3.785,0.3,30% voltage level)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBatteryPercentCalculation(3.875, 0.5, middle voltage (3.875V))">
+                  </a> <!-- testBatteryPercentCalculation(3.875, 0.5, middle voltage (3.875V)) -->
+                  <span class="method-name">testBatteryPercentCalculation</span>
+                  <span class="parameters">(3.875,0.5,middle voltage (3.875V))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBatteryPercentCalculation(3.65, 0.0, minimum voltage (3.65V))">
+                  </a> <!-- testBatteryPercentCalculation(3.65, 0.0, minimum voltage (3.65V)) -->
+                  <span class="method-name">testBatteryPercentCalculation</span>
+                  <span class="parameters">(3.65,0.0,minimum voltage (3.65V))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBatteryPercentCalculation(4.2, 1.0, above maximum voltage (4.2V))">
+                  </a> <!-- testBatteryPercentCalculation(4.2, 1.0, above maximum voltage (4.2V)) -->
+                  <span class="method-name">testBatteryPercentCalculation</span>
+                  <span class="parameters">(4.2,1.0,above maximum voltage (4.2V))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBatteryPercentCalculation(4.1, 1.0, maximum voltage (4.1V))">
+                  </a> <!-- testBatteryPercentCalculation(4.1, 1.0, maximum voltage (4.1V)) -->
+                  <span class="method-name">testBatteryPercentCalculation</span>
+                  <span class="parameters">(4.1,1.0,maximum voltage (4.1V))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBatteryPercentCalculation(3.965, 0.7, 70% voltage level)">
+                  </a> <!-- testBatteryPercentCalculation(3.965, 0.7, 70% voltage level) -->
+                  <span class="method-name">testBatteryPercentCalculation</span>
+                  <span class="parameters">(3.965,0.7,70% voltage level)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBatteryPercentCalculation(3.5, 0.0, below minimum voltage (3.5V))">
+                  </a> <!-- testBatteryPercentCalculation(3.5, 0.0, below minimum voltage (3.5V)) -->
+                  <span class="method-name">testBatteryPercentCalculation</span>
+                  <span class="parameters">(3.5,0.0,below minimum voltage (3.5V))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testConstants">
+                  </a> <!-- testConstants -->
+                  <span class="method-name">testConstants</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDateParsing(210507, 21, 5, 2007, May 21, 2007 (210507))">
+                  </a> <!-- testDateParsing(210507, 21, 5, 2007, May 21, 2007 (210507)) -->
+                  <span class="method-name">testDateParsing</span>
+                  <span class="parameters">(210507,21,5,2007,May 21, 2007 (210507))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDateParsing(10101, 1, 1, 2001, January 1, 2001 (10101))">
+                  </a> <!-- testDateParsing(10101, 1, 1, 2001, January 1, 2001 (10101)) -->
+                  <span class="method-name">testDateParsing</span>
+                  <span class="parameters">(10101,1,1,2001,January 1, 2001 (10101))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDateParsing(110809, 11, 8, 2009, August 11, 2009 (110809))">
+                  </a> <!-- testDateParsing(110809, 11, 8, 2009, August 11, 2009 (110809)) -->
+                  <span class="method-name">testDateParsing</span>
+                  <span class="parameters">(110809,11,8,2009,August 11, 2009 (110809))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDateParsing(311299, 31, 12, 2099, December 31, 2099 (311299))">
+                  </a> <!-- testDateParsing(311299, 31, 12, 2099, December 31, 2099 (311299)) -->
+                  <span class="method-name">testDateParsing</span>
+                  <span class="parameters">(311299,31,12,2099,December 31, 2099 (311299))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testKilometersPerKnotConstant">
+                  </a> <!-- testKilometersPerKnotConstant -->
+                  <span class="method-name">testKilometersPerKnotConstant</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLatitudeParsing(4500.0000, N, 45.0, 45 degrees North)">
+                  </a> <!-- testLatitudeParsing(4500.0000, N, 45.0, 45 degrees North) -->
+                  <span class="method-name">testLatitudeParsing</span>
+                  <span class="parameters">(4500.0000,N,45.0,45 degrees North)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLatitudeParsing(, N, 90.0, Empty latitude string)">
+                  </a> <!-- testLatitudeParsing(, N, 90.0, Empty latitude string) -->
+                  <span class="method-name">testLatitudeParsing</span>
+                  <span class="parameters">(,N,90.0,Empty latitude string)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLatitudeParsing(invalid, N, 90.0, Invalid latitude string)">
+                  </a> <!-- testLatitudeParsing(invalid, N, 90.0, Invalid latitude string) -->
+                  <span class="method-name">testLatitudeParsing</span>
+                  <span class="parameters">(invalid,N,90.0,Invalid latitude string)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLatitudeParsing(0000.0000, N, 0.0, Zero latitude North)">
+                  </a> <!-- testLatitudeParsing(0000.0000, N, 0.0, Zero latitude North) -->
+                  <span class="method-name">testLatitudeParsing</span>
+                  <span class="parameters">(0000.0000,N,0.0,Zero latitude North)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLatitudeParsing(3130.0577, S, -31.50096167, South latitude)">
+                  </a> <!-- testLatitudeParsing(3130.0577, S, -31.50096167, South latitude) -->
+                  <span class="method-name">testLatitudeParsing</span>
+                  <span class="parameters">(3130.0577,S,-31.50096167,South latitude)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLatitudeParsing(0000.0000, S, 0.0, Zero latitude South)">
+                  </a> <!-- testLatitudeParsing(0000.0000, S, 0.0, Zero latitude South) -->
+                  <span class="method-name">testLatitudeParsing</span>
+                  <span class="parameters">(0000.0000,S,0.0,Zero latitude South)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLatitudeParsing(3130.0577, N, 31.50096167, North latitude)">
+                  </a> <!-- testLatitudeParsing(3130.0577, N, 31.50096167, North latitude) -->
+                  <span class="method-name">testLatitudeParsing</span>
+                  <span class="parameters">(3130.0577,N,31.50096167,North latitude)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLongitudeParsing(00000.0000, E, 0.0, Zero longitude East)">
+                  </a> <!-- testLongitudeParsing(00000.0000, E, 0.0, Zero longitude East) -->
+                  <span class="method-name">testLongitudeParsing</span>
+                  <span class="parameters">(00000.0000,E,0.0,Zero longitude East)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLongitudeParsing(18000.0000, E, 180.0, 180 degrees East (invalid))">
+                  </a> <!-- testLongitudeParsing(18000.0000, E, 180.0, 180 degrees East (invalid)) -->
+                  <span class="method-name">testLongitudeParsing</span>
+                  <span class="parameters">(18000.0000,E,180.0,180 degrees East (invalid))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLongitudeParsing(14271.7421, W, -143.1957, West longitude)">
+                  </a> <!-- testLongitudeParsing(14271.7421, W, -143.1957, West longitude) -->
+                  <span class="method-name">testLongitudeParsing</span>
+                  <span class="parameters">(14271.7421,W,-143.1957,West longitude)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLongitudeParsing(, E, 180.0, Empty longitude string)">
+                  </a> <!-- testLongitudeParsing(, E, 180.0, Empty longitude string) -->
+                  <span class="method-name">testLongitudeParsing</span>
+                  <span class="parameters">(,E,180.0,Empty longitude string)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLongitudeParsing(00000.0000, W, 0.0, Zero longitude West)">
+                  </a> <!-- testLongitudeParsing(00000.0000, W, 0.0, Zero longitude West) -->
+                  <span class="method-name">testLongitudeParsing</span>
+                  <span class="parameters">(00000.0000,W,0.0,Zero longitude West)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLongitudeParsing(invalid, E, 180.0, Invalid longitude string)">
+                  </a> <!-- testLongitudeParsing(invalid, E, 180.0, Invalid longitude string) -->
+                  <span class="method-name">testLongitudeParsing</span>
+                  <span class="parameters">(invalid,E,180.0,Invalid longitude string)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLongitudeParsing(14271.7421, E, 143.1957, East longitude)">
+                  </a> <!-- testLongitudeParsing(14271.7421, E, 143.1957, East longitude) -->
+                  <span class="method-name">testLongitudeParsing</span>
+                  <span class="parameters">(14271.7421,E,143.1957,East longitude)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStatusCodePrefix(AUTO, AUTO, No prefix)">
+                  </a> <!-- testStatusCodePrefix(AUTO, AUTO, No prefix) -->
+                  <span class="method-name">testStatusCodePrefix</span>
+                  <span class="parameters">(AUTO,AUTO,No prefix)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStatusCodePrefix(BSOS, SOS, SOS with B prefix)">
+                  </a> <!-- testStatusCodePrefix(BSOS, SOS, SOS with B prefix) -->
+                  <span class="method-name">testStatusCodePrefix</span>
+                  <span class="parameters">(BSOS,SOS,SOS with B prefix)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStatusCodePrefix(B-SOS, SOS, SOS with B- prefix)">
+                  </a> <!-- testStatusCodePrefix(B-SOS, SOS, SOS with B- prefix) -->
+                  <span class="method-name">testStatusCodePrefix</span>
+                  <span class="parameters">(B-SOS,SOS,SOS with B- prefix)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStatusCodePrefix(B-AUTO, AUTO, B- prefix)">
+                  </a> <!-- testStatusCodePrefix(B-AUTO, AUTO, B- prefix) -->
+                  <span class="method-name">testStatusCodePrefix</span>
+                  <span class="parameters">(B-AUTO,AUTO,B- prefix)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStatusCodePrefix(BAUTO, AUTO, B prefix)">
+                  </a> <!-- testStatusCodePrefix(BAUTO, AUTO, B prefix) -->
+                  <span class="method-name">testStatusCodePrefix</span>
+                  <span class="parameters">(BAUTO,AUTO,B prefix)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStatusCodePrefix(SOS, SOS, SOS no prefix)">
+                  </a> <!-- testStatusCodePrefix(SOS, SOS, SOS no prefix) -->
+                  <span class="method-name">testStatusCodePrefix</span>
+                  <span class="parameters">(SOS,SOS,SOS no prefix)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStringParsing(single, ,, 1, Single field)">
+                  </a> <!-- testStringParsing(single, ,, 1, Single field) -->
+                  <span class="method-name">testStringParsing</span>
+                  <span class="parameters">(single,,,1,Single field)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStringParsing(field1,field2,field3, ,, 3, Simple comma-separated values)">
+                  </a> <!-- testStringParsing(field1,field2,field3, ,, 3, Simple comma-separated values) -->
+                  <span class="method-name">testStringParsing</span>
+                  <span class="parameters">(field1,field2,field3,,,3,Simple comma-separated values)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStringParsing(a,b,c,d,e, ,, 5, Five fields)">
+                  </a> <!-- testStringParsing(a,b,c,d,e, ,, 5, Five fields) -->
+                  <span class="method-name">testStringParsing</span>
+                  <span class="parameters">(a,b,c,d,e,,,5,Five fields)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStringParsing($GPRMC,023000.000,A,3130.0577,N,14271.7421,W,0.53,208.37,210507,,*19,AUTO, ,, 13, Valid GPRMC string)">
+                  </a> <!-- testStringParsing($GPRMC,023000.000,A,3130.0577,N,14271.7421,W,0.53,208.37,210507,,*19,AUTO, ,, 13, Valid GPRMC string) -->
+                  <span class="method-name">testStringParsing</span>
+                  <span class="parameters">($GPRMC,023000.000,A,3130.0577,N,14271.7421,W,0.53,208.37,210507,,*19,AUTO,,,13,Valid GPRMC string)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStringParsing(, ,, 1, Empty string)">
+                  </a> <!-- testStringParsing(, ,, 1, Empty string) -->
+                  <span class="method-name">testStringParsing</span>
+                  <span class="parameters">(,,,1,Empty string)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testTimeParsing(23000, 2, 30, 0, 02:30:00 (23000))">
+                  </a> <!-- testTimeParsing(23000, 2, 30, 0, 02:30:00 (23000)) -->
+                  <span class="method-name">testTimeParsing</span>
+                  <span class="parameters">(23000,2,30,0,02:30:00 (23000))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testTimeParsing(124422, 12, 44, 22, 12:44:22 (124422))">
+                  </a> <!-- testTimeParsing(124422, 12, 44, 22, 12:44:22 (124422)) -->
+                  <span class="method-name">testTimeParsing</span>
+                  <span class="parameters">(124422,12,44,22,12:44:22 (124422))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testTimeParsing(0, 0, 0, 0, 00:00:00 (0))">
+                  </a> <!-- testTimeParsing(0, 0, 0, 0, 00:00:00 (0)) -->
+                  <span class="method-name">testTimeParsing</span>
+                  <span class="parameters">(0,0,0,0,00:00:00 (0))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testTimeParsing(235959, 23, 59, 59, 23:59:59 (235959))">
+                  </a> <!-- testTimeParsing(235959, 23, 59, 59, 23:59:59 (235959)) -->
+                  <span class="method-name">testTimeParsing</span>
+                  <span class="parameters">(235959,23,59,59,23:59:59 (235959))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testTimeParsing(120000, 12, 0, 0, 12:00:00 (120000))">
+                  </a> <!-- testTimeParsing(120000, 12, 0, 0, 12:00:00 (120000)) -->
+                  <span class="method-name">testTimeParsing</span>
+                  <span class="parameters">(120000,12,0,0,12:00:00 (120000))</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-ClickForTech_Test_Suite-class-passed -->
+        </div> <!-- panel ClickForTech_Test_Suite -->
+        <div panel-name="test-xml-ClickForTech_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/home/runner/work/clickfortech/clickfortech/tests/testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;ClickForTech Test Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;ControllerData Utility Tests&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.click4tech.ControllerDataUtilTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- ControllerData Utility Tests --&gt;
+&lt;/suite&gt; &lt;!-- ClickForTech Test Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-ClickForTech_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for ClickForTech Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">ControllerData Utility Tests (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-ClickForTech_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for ClickForTech Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-ClickForTech_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for ClickForTech Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_ClickForTech_Test_Suite');
+function tableData_ClickForTech_Test_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(43);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testBatteryPercentCalculation')
+data.setCell(0, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(0, 3, 3);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testLongitudeParsing')
+data.setCell(1, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(1, 3, 1);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testStatusCodePrefix')
+data.setCell(2, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(2, 3, 1);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testLongitudeParsing')
+data.setCell(3, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(3, 3, 1);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testLongitudeParsing')
+data.setCell(4, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(4, 3, 1);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testStatusCodePrefix')
+data.setCell(5, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(5, 3, 1);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testStringParsing')
+data.setCell(6, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(6, 3, 1);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testDateParsing')
+data.setCell(7, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(7, 3, 1);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testTimeParsing')
+data.setCell(8, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(8, 3, 1);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testLatitudeParsing')
+data.setCell(9, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(9, 3, 1);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testDateParsing')
+data.setCell(10, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(10, 3, 0);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'testBatteryPercentCalculation')
+data.setCell(11, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(11, 3, 0);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testStatusCodePrefix')
+data.setCell(12, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(12, 3, 0);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testLongitudeParsing')
+data.setCell(13, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(13, 3, 0);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testLongitudeParsing')
+data.setCell(14, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(14, 3, 0);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'testLongitudeParsing')
+data.setCell(15, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(15, 3, 0);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'testConstants')
+data.setCell(16, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(16, 3, 0);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'testLatitudeParsing')
+data.setCell(17, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(17, 3, 0);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'testKilometersPerKnotConstant')
+data.setCell(18, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(18, 3, 0);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'testStringParsing')
+data.setCell(19, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(19, 3, 0);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'testTimeParsing')
+data.setCell(20, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(20, 3, 0);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'testDateParsing')
+data.setCell(21, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(21, 3, 0);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'testStringParsing')
+data.setCell(22, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(22, 3, 0);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'testBatteryPercentCalculation')
+data.setCell(23, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(23, 3, 0);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'testLatitudeParsing')
+data.setCell(24, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(24, 3, 0);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'testStatusCodePrefix')
+data.setCell(25, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(25, 3, 0);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'testBatteryPercentCalculation')
+data.setCell(26, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(26, 3, 0);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'testLongitudeParsing')
+data.setCell(27, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(27, 3, 0);
+data.setCell(28, 0, 28)
+data.setCell(28, 1, 'testTimeParsing')
+data.setCell(28, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(28, 3, 0);
+data.setCell(29, 0, 29)
+data.setCell(29, 1, 'testLatitudeParsing')
+data.setCell(29, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(29, 3, 0);
+data.setCell(30, 0, 30)
+data.setCell(30, 1, 'testStatusCodePrefix')
+data.setCell(30, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(30, 3, 0);
+data.setCell(31, 0, 31)
+data.setCell(31, 1, 'testBatteryPercentCalculation')
+data.setCell(31, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(31, 3, 0);
+data.setCell(32, 0, 32)
+data.setCell(32, 1, 'testStringParsing')
+data.setCell(32, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(32, 3, 0);
+data.setCell(33, 0, 33)
+data.setCell(33, 1, 'testStringParsing')
+data.setCell(33, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(33, 3, 0);
+data.setCell(34, 0, 34)
+data.setCell(34, 1, 'testLatitudeParsing')
+data.setCell(34, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(34, 3, 0);
+data.setCell(35, 0, 35)
+data.setCell(35, 1, 'testBatteryPercentCalculation')
+data.setCell(35, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(35, 3, 0);
+data.setCell(36, 0, 36)
+data.setCell(36, 1, 'testBatteryPercentCalculation')
+data.setCell(36, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(36, 3, 0);
+data.setCell(37, 0, 37)
+data.setCell(37, 1, 'testTimeParsing')
+data.setCell(37, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(37, 3, 0);
+data.setCell(38, 0, 38)
+data.setCell(38, 1, 'testLatitudeParsing')
+data.setCell(38, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(38, 3, 0);
+data.setCell(39, 0, 39)
+data.setCell(39, 1, 'testStatusCodePrefix')
+data.setCell(39, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(39, 3, 0);
+data.setCell(40, 0, 40)
+data.setCell(40, 1, 'testTimeParsing')
+data.setCell(40, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(40, 3, 0);
+data.setCell(41, 0, 41)
+data.setCell(41, 1, 'testDateParsing')
+data.setCell(41, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(41, 3, 0);
+data.setCell(42, 0, 42)
+data.setCell(42, 1, 'testLatitudeParsing')
+data.setCell(42, 2, 'com.click4tech.ControllerDataUtilTest')
+data.setCell(42, 3, 0);
+window.suiteTableData['ClickForTech_Test_Suite']= { tableData: data, tableDiv: 'times-div-ClickForTech_Test_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 12 ms</span>
+              <div id="times-div-ClickForTech_Test_Suite">
+              </div> <!-- times-div-ClickForTech_Test_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-ClickForTech_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for ClickForTech Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-ClickForTech_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-ClickForTech_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.click4tech.ControllerDataUtilTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testBatteryPercentCalculation(4.1, 1.0, maximum voltage (4.1V))</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBatteryPercentCalculation(3.65, 0.0, minimum voltage (3.65V))</span>
+                <span class="method-start">4 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBatteryPercentCalculation(3.875, 0.5, middle voltage (3.875V))</span>
+                <span class="method-start">5 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBatteryPercentCalculation(4.2, 1.0, above maximum voltage (4.2V))</span>
+                <span class="method-start">5 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBatteryPercentCalculation(3.785, 0.3, 30% voltage level)</span>
+                <span class="method-start">6 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBatteryPercentCalculation(3.5, 0.0, below minimum voltage (3.5V))</span>
+                <span class="method-start">6 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBatteryPercentCalculation(3.965, 0.7, 70% voltage level)</span>
+                <span class="method-start">7 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testConstants</span>
+                <span class="method-start">8 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testDateParsing(210507, 21, 5, 2007, May 21, 2007 (210507))</span>
+                <span class="method-start">9 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testDateParsing(10101, 1, 1, 2001, January 1, 2001 (10101))</span>
+                <span class="method-start">10 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testDateParsing(110809, 11, 8, 2009, August 11, 2009 (110809))</span>
+                <span class="method-start">10 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testDateParsing(311299, 31, 12, 2099, December 31, 2099 (311299))</span>
+                <span class="method-start">11 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testKilometersPerKnotConstant</span>
+                <span class="method-start">12 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLatitudeParsing(3130.0577, N, 31.50096167, North latitude)</span>
+                <span class="method-start">13 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLatitudeParsing(0000.0000, N, 0.0, Zero latitude North)</span>
+                <span class="method-start">14 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLatitudeParsing(3130.0577, S, -31.50096167, South latitude)</span>
+                <span class="method-start">14 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLatitudeParsing(4500.0000, N, 45.0, 45 degrees North)</span>
+                <span class="method-start">15 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLatitudeParsing(0000.0000, S, 0.0, Zero latitude South)</span>
+                <span class="method-start">15 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLatitudeParsing(, N, 90.0, Empty latitude string)</span>
+                <span class="method-start">16 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLatitudeParsing(invalid, N, 90.0, Invalid latitude string)</span>
+                <span class="method-start">16 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLongitudeParsing(14271.7421, W, -143.1957, West longitude)</span>
+                <span class="method-start">17 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLongitudeParsing(00000.0000, E, 0.0, Zero longitude East)</span>
+                <span class="method-start">18 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLongitudeParsing(14271.7421, E, 143.1957, East longitude)</span>
+                <span class="method-start">18 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLongitudeParsing(18000.0000, E, 180.0, 180 degrees East (invalid))</span>
+                <span class="method-start">19 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLongitudeParsing(00000.0000, W, 0.0, Zero longitude West)</span>
+                <span class="method-start">19 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLongitudeParsing(, E, 180.0, Empty longitude string)</span>
+                <span class="method-start">20 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLongitudeParsing(invalid, E, 180.0, Invalid longitude string)</span>
+                <span class="method-start">20 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testStatusCodePrefix(AUTO, AUTO, No prefix)</span>
+                <span class="method-start">21 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testStatusCodePrefix(B-AUTO, AUTO, B- prefix)</span>
+                <span class="method-start">22 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testStatusCodePrefix(BAUTO, AUTO, B prefix)</span>
+                <span class="method-start">22 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testStatusCodePrefix(BSOS, SOS, SOS with B prefix)</span>
+                <span class="method-start">23 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testStatusCodePrefix(B-SOS, SOS, SOS with B- prefix)</span>
+                <span class="method-start">23 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testStatusCodePrefix(SOS, SOS, SOS no prefix)</span>
+                <span class="method-start">23 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testStringParsing(single, ,, 1, Single field)</span>
+                <span class="method-start">25 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testStringParsing(field1,field2,field3, ,, 3, Simple comma-separated values)</span>
+                <span class="method-start">25 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testStringParsing($GPRMC,023000.000,A,3130.0577,N,14271.7421,W,0.53,208.37,210507,,*19,AUTO, ,, 13, Valid GPRMC string)</span>
+                <span class="method-start">25 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testStringParsing(a,b,c,d,e, ,, 5, Five fields)</span>
+                <span class="method-start">26 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testStringParsing(, ,, 1, Empty string)</span>
+                <span class="method-start">26 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testTimeParsing(23000, 2, 30, 0, 02:30:00 (23000))</span>
+                <span class="method-start">27 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testTimeParsing(124422, 12, 44, 22, 12:44:22 (124422))</span>
+                <span class="method-start">28 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testTimeParsing(235959, 23, 59, 59, 23:59:59 (235959))</span>
+                <span class="method-start">28 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testTimeParsing(0, 0, 0, 0, 00:00:00 (0))</span>
+                <span class="method-start">29 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testTimeParsing(120000, 12, 0, 0, 12:00:00 (120000))</span>
+                <span class="method-start">29 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
