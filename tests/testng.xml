@@ -6,4 +6,14 @@
             <class name="com.click4tech.ControllerDataUtilTest"/>
         </classes>
     </test>
+    <test name="ControllerData Servlet Tests" preserve-order="true">
+        <classes>
+            <class name="com.click4tech.ControllerDataServletTest"/>
+        </classes>
+    </test>
+    <test name="RunTest Class Tests" preserve-order="true">
+        <classes>
+            <class name="test.selenium.test.RunTestTest"/>
+        </classes>
+    </test>
 </suite>
