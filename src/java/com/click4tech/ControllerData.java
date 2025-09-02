@@ -22,183 +22,298 @@ import org.opengts.db.*;
 
 import org.opengts.war.tools.*;
 
+/**
+ * GPS Tracking Device Controller Data Servlet
+ * 
+ * This servlet handles HTTP requests from GC-101 GPS tracking devices and processes
+ * GPS location data in GPRMC format. It's designed to work with the OpenGTS 
+ * (Open GPS Tracking System) framework.
+ * 
+ * <p>Key Features:</p>
+ * <ul>
+ *   <li>Processes HTTP GET/POST requests from GPS devices</li>
+ *   <li>Parses GPRMC (Global Positioning Recommended Minimum) data format</li>
+ *   <li>Handles device identification via IMEI numbers</li>
+ *   <li>Manages various GPS event status codes (location, alarms, geofencing)</li>
+ *   <li>Calculates battery levels and performs coordinate transformations</li>
+ *   <li>Supports geofence transition detection and simulation</li>
+ *   <li>Integrates with OpenGTS database for event storage</li>
+ * </ul>
+ * 
+ * <p>Supported URL format:</p>
+ * <code>http://server:port/gc101/Data?imei=DEVICE_IMEI&rmc=GPRMC_DATA&code=STATUS_CODE</code>
+ * 
+ * <p>Example request:</p>
+ * <code>http://localhost:8080/gc101/Data?imei=471923002250245&rmc=$GPRMC,023000.000,A,3130.0577,N,14271.7421,W,0.53,208.37,210507,,*19,AUTO</code>
+ * 
+ * @author Click4Tech Support Team
+ * @version 1.0.2
+ * @since 1.0.0
+ */
 public class ControllerData 
     extends CommonServlet
 {
 
     // ------------------------------------------------------------------------
+    // Application Constants and Configuration
+    // ------------------------------------------------------------------------
     
-    /* version */
+    /** Current version of the ControllerData servlet */
     public  static final String     VERSION                     = "1.0.2";
     
-    /* device code */
+    /** Device code identifier for GC-101 GPS tracking devices */
     public  static final String     DEVICE_CODE                 = "gc101";
 
-    /* UniqueID prefix */
+    /** Unique ID prefix for GC-101 devices (format: gc101_IMEI) */
     public  static final String     UNIQUE_ID_PREFIX_GC101      = "gc101_";
+    
+    /** Alternative unique ID prefix using IMEI directly (format: imei_IMEI) */
     public  static final String     UNIQUE_ID_PREFIX_IMEI       = "imei_";
+    
+    /** 
+     * Flag to enable/disable IMEI-only lookup as fallback device identification.
+     * When true, allows lookup by raw IMEI number if prefixed versions fail.
+     */
     private static final boolean    ALSO_CHECK_IMEI             = false;
 
-    /* parameter keys (lookups are case insensitive) */
+    /** HTTP parameter names for command requests (case insensitive) */
     private static final String     PARM_COMMAND[]              = { "cmd"             };
+    
+    /** HTTP parameter names for device IMEI identification (case insensitive) */
     private static final String     PARM_IMEI[]                 = { "imei"  , "id"    };
+    
+    /** HTTP parameter names for GPRMC GPS data (case insensitive) */
     private static final String     PARM_RMC[]                  = { "rmc"   , "gprmc" };
+    
+    /** HTTP parameter names for status/event codes (case insensitive) */
     private static final String     PARM_CODE[]                 = { "code"  , "sc"    };
     
-    /* response Strings */
+    /** Standard success response sent back to GPS device */
     private static final String     RESPONSE_OK                 = "OK";
+    
+    /** Standard error response sent back to GPS device */
     private static final String     RESPONSE_ERROR              = "";
 
     // ------------------------------------------------------------------------
+    // Runtime Configuration Property Keys
+    // ------------------------------------------------------------------------
 
-    /* runtime config */
+    /** Configuration key for minimum speed threshold in KPH below which device is considered stopped */
     public  static final String CONFIG_MIN_SPEED            = DEVICE_CODE + ".minimumSpeedKPH";
+    
+    /** Configuration key to enable GPS-based odometer estimation for distance calculations */
     public  static final String CONFIG_ESTIMATE_ODOMETER    = DEVICE_CODE + ".estimateOdometer";
+    
+    /** Configuration key to enable automatic geofence arrive/depart event simulation */
     public  static final String CONFIG_SIMEVENT_GEOZONES    = DEVICE_CODE + ".simulateGeozones";
 
     // ------------------------------------------------------------------------
+    // Physical Constants and Conversion Factors
+    // ------------------------------------------------------------------------
 
-    /* convenience for converting knot to kilometers */
+    /** Conversion factor from nautical miles (knots) to kilometers */
     public static final  double  KILOMETERS_PER_KNOT        = 1.85200000;
 
     // ------------------------------------------------------------------------
+    // Runtime Configuration Variables (loaded from config files)
+    // ------------------------------------------------------------------------
 
-    /* estimate GPS-based odometer */
+    /** 
+     * Flag indicating whether to calculate GPS-based odometer values.
+     * When enabled, estimates distance traveled based on GPS coordinate changes.
+     */
     public  static       boolean ESTIMATE_ODOMETER          = false;
 
-    /* simulate geozones */
+    /** 
+     * Flag indicating whether to automatically simulate geofence events.
+     * When enabled, generates arrive/depart events when device crosses geofence boundaries.
+     */
     public  static       boolean SIMEVENT_GEOZONES          = false;
 
-    /* default minimum acceptable speed value */
-    // Speeds below this value will be considered 'stopped'
+    /** 
+     * Minimum acceptable speed threshold in kilometers per hour.
+     * GPS readings below this value are treated as stopped (speed = 0).
+     * Helps filter out GPS noise when device is stationary.
+     */
     public  static       double  MinimumReqSpeedKPH         = 4.0;
 
     // ------------------------------------------------------------------------
-
+    // Battery Level Calculation Constants and Methods
+    // ------------------------------------------------------------------------
+    
+    /** Maximum battery voltage for GC-101 device (4.1V for 1100 mAh battery) */
     private static       double  MAX_BATTERY_VOLTS          = 4.100; // 1100 maH
+    
+    /** Minimum operational battery voltage for GC-101 device */
     private static       double  MIN_BATTERY_VOLTS          = 3.650;
+    
+    /** 
+     * Battery voltage range used for percentage calculation.
+     * Represents the difference between max and min operational voltages.
+     */
     private static       double  RANGE_BATTERY_VOLTS        = MAX_BATTERY_VOLTS - MIN_BATTERY_VOLTS; // 0.45
     
+    /**
+     * Calculates battery level as a percentage based on current voltage.
+     * Uses linear interpolation between minimum and maximum voltage thresholds.
+     * Formula provided by Sanav (device manufacturer).
+     * 
+     * @param voltage Current battery voltage in volts
+     * @return Battery level as percentage (0.0 to 1.0), where 1.0 = 100%
+     */
     private static double CalcBatteryPercent(double voltage)
     {
-        // formula obtained from Sanav
+        // Linear interpolation: (current - min) / (max - min)
         double percent = (voltage - MIN_BATTERY_VOLTS) / RANGE_BATTERY_VOLTS;
+        
+        // Clamp to valid range [0.0, 1.0]
         if (percent < 0.0) {
-            return 0.0;
+            return 0.0;  // Battery critically low or voltage reading error
         } else
         if (percent > 1.0) {
-            return 1.0;
+            return 1.0;  // Battery full or voltage reading above maximum
         } else {
-            return percent;
+            return percent;  // Normal battery level
         }
     }
 
     // ------------------------------------------------------------------------
+    // Static Initialization Block
     // ------------------------------------------------------------------------
 
-    /* static initializer */
+    /** 
+     * Static initializer - executed once when class is first loaded.
+     * Initializes database configuration and loads runtime settings from config files.
+     */
     static {
 
-        /* initialize DBFactories */
-        // should already have been called by 'RTConfigContextListener'
+        /** Initialize OpenGTS database factories and configuration */
+        // Note: Should already have been called by 'RTConfigContextListener' during webapp startup
         DBConfig.servletInit(null);
 
-        /* version */
+        /** Log current servlet version for debugging and monitoring */
         Print.logInfo("Version: v" + VERSION);
 
-        /* minimum speed */
+        /** Load minimum speed threshold from configuration file */
         MinimumReqSpeedKPH = RTConfig.getDouble(CONFIG_MIN_SPEED, MinimumReqSpeedKPH);
         Print.logInfo("Minimum speed: " + MinimumReqSpeedKPH + " kph");
 
-        /* calculate estimated estimate GPS-based odometer */
+        /** Load GPS-based odometer estimation setting from configuration */
         ESTIMATE_ODOMETER = RTConfig.getBoolean(CONFIG_ESTIMATE_ODOMETER, ESTIMATE_ODOMETER);
         Print.logInfo("Estimating Odometer: " + ESTIMATE_ODOMETER);
 
-        /* simulate geozone arrive/depart */
+        /** Load geofence simulation setting from configuration */
         SIMEVENT_GEOZONES = RTConfig.getBoolean(CONFIG_SIMEVENT_GEOZONES, SIMEVENT_GEOZONES);
         Print.logInfo("Simulating Geozone: " + SIMEVENT_GEOZONES);
 
     };
 
     // ------------------------------------------------------------------------
+    // HTTP Response Utility Methods  
     // ------------------------------------------------------------------------
 
-    /* send plain text response */
+    /**
+     * Sends a plain text response back to the requesting GPS device.
+     * Sets the appropriate MIME type for plain text and writes the message to the response.
+     * 
+     * @param response HttpServletResponse object to write the response to
+     * @param errMsg   The text message to send back to the device
+     * @throws ServletException If there's an error in servlet processing
+     * @throws IOException      If there's an I/O error writing the response
+     */
     private void plainTextResponse(HttpServletResponse response, String errMsg)
         throws ServletException, IOException
     {
+        // Set response content type to plain text
         CommonServlet.setResponseContentType(response, HTMLTools.MIME_PLAIN());
+        
+        // Get output stream and send response
         PrintWriter out = response.getWriter();
         out.println(errMsg);
     }
 
     // ------------------------------------------------------------------------
+    // Device Management Methods
+    // ------------------------------------------------------------------------
 
     /**
-    *** Load Device record from IMEI#
-    **/
+     * Loads a Device record from the database using the device's IMEI number.
+     * Attempts multiple lookup strategies in order of preference:
+     * 1. Standard GC-101 prefixed ID (gc101_IMEI)
+     * 2. Alternative IMEI prefixed ID (imei_IMEI) 
+     * 3. Raw IMEI number (if ALSO_CHECK_IMEI is enabled)
+     * 
+     * Also validates the requesting IP address against the device's allowed IP list
+     * and updates device connection metadata.
+     * 
+     * @param imei    The device's IMEI number (15-digit identifier)
+     * @param ipAddr  The IP address of the requesting device (for validation)
+     * @return        Device object if found and valid, null if not found or invalid IP
+     */
     private Device loadDevice(String imei, String ipAddr)
     {
 
-        /* null IMEI? */
+        /** Validate IMEI parameter */
         if (StringTools.isBlank(imei)) {
             Print.logWarn("Ignoring packet with blank IMEI#");
             return null;
         }
 
-        /* find Device */
+        /** Initialize device lookup variables */
         Device        device    = null;
         DataTransport dataXPort = null;
         String        mobileID  = null;
+        
         try {
-            // first, try the standard uniqueID
+            // Strategy 1: Try standard GC-101 prefixed unique ID
             String gc101ID = UNIQUE_ID_PREFIX_GC101 + imei;
             device = Transport.loadDeviceByUniqueID(gc101ID);
             if (device != null) {
-                // found a match
-                mobileID = gc101ID;
+                mobileID = gc101ID; // Found device with gc101_ prefix
             } else {
-                // second, try the alternate uniqueID
+                // Strategy 2: Try alternative IMEI prefixed unique ID
                 String imeiID = UNIQUE_ID_PREFIX_IMEI + imei;
                 device = Transport.loadDeviceByUniqueID(imeiID);
                 if (device != null) {
-                    // found a match
-                    mobileID = imeiID;
+                    mobileID = imeiID; // Found device with imei_ prefix
                 } else {
-                    // third, try the IMEI# by itself
+                    // Strategy 3: Try raw IMEI number (fallback option)
                     if (ALSO_CHECK_IMEI && (imei.length() >= 15)) { // IMEI numbers are 15 digits long
                         device = Transport.loadDeviceByUniqueID(imei);
                         if (device != null) {
-                            // found a match
-                            mobileID = imei;
+                            mobileID = imei; // Found device with raw IMEI
                         }
                     }
                 }
             }
-            // final check to see if we found the Device record
+            
+            // Final validation - ensure we found a device record
             if (device == null) {
-                Print.logWarn("GC-101 ID not found!: " + gc101ID); // <== display main key
+                Print.logWarn("GC-101 ID not found!: " + gc101ID); // Display primary lookup key
                 return null;
             }
+            
+            // Get the device's data transport configuration
             dataXPort = device.getDataTransport();
+            
         } catch (DBException dbe) {
             Print.logError("Exception getting Device: " + mobileID + " [" + dbe + "]");
             return null;
         }
 
-        /* validate source IP address */
+        /** Validate source IP address against device's allowed IP list */
         if ((ipAddr != null) && !dataXPort.isValidIPAddress(ipAddr)) {
             Print.logError("Invalid IP Address for device: " + ipAddr + 
                 " [expecting " + dataXPort.getIpAddressValid() + "]");
             return null;
         }
 
-        /* set transport attributes */
-        dataXPort.setIpAddressCurrent(ipAddr);      // FLD_ipAddressCurrent
-        dataXPort.setDeviceCode(DEVICE_CODE);       // FLD_deviceCode
-        device.setLastTotalConnectTime(DateTime.getCurrentTimeSec()); // FLD_lastTotalConnectTime
+        /** Update device connection metadata */
+        dataXPort.setIpAddressCurrent(ipAddr);      // Record current IP address
+        dataXPort.setDeviceCode(DEVICE_CODE);       // Set device type identifier  
+        device.setLastTotalConnectTime(DateTime.getCurrentTimeSec()); // Update last connection time
 
-        /* return device */
+        /** Return successfully loaded and validated device */
         return device;
 
     }
